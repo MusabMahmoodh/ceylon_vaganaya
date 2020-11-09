@@ -1,0 +1,75 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+    /* dark shades of  colors*/
+    --clr-primary: #1a237e;
+    --clr-secondary: #ffea00 ;
+    --clr-success: #00c853;
+    --clr-warning: #ef6c00;
+    --clr-danger: #dd2c00;
+    --clr-info: #616161;
+    
+    /* lighter shades of  colors */
+    --clr-primary-light: #9fa8da;
+    --clr-secondary-light: #fff59d ;
+    --clr-success-light: #a5d6a7 ;
+    --clr-warning-light: #ffcc80;
+    --clr-danger-light: #ffab91;
+    --clr-info-light: #eeeeee;
+    /* darkest grey - used for headings */
+    --clr-grey: hsl(209, 61%, 16%);
+    --clr-grey-:light hsl(210, 31%, 80%);
+    --clr-black: #000000;
+    /* --transition: all 0.3s linear; */
+    /* --spacing: 0.1rem;
+    --radius: 0.25rem; */
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+   
+  }
+  /*
+  =============== 
+  Global Styles
+  ===============
+  */
+  
+  *,
+  ::after,
+  ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .bg-primary {
+      background-color: var(--clr-primary) !important;
+
+  }
+
+   /*
+  =============== 
+Component
+  ===============
+  */
+  
+  /* Navbar */
+  nav {
+      height: 10vh !important;
+  }
+  .nav-wrapper img{
+      height: 100%;
+      max-width: fit-content;
+  }
+  /* main */
+main {
+    min-height: 80vh !important;
+}
+/* Footer */
+  footer{
+      height: 10vh !important;
+      margin-bottom: 0;
+      padding-bottom: 0;
+  }
