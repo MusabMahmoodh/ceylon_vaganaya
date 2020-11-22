@@ -22,13 +22,19 @@ Variables
     --clr-info-light: #eeeeee;
     /* darkest grey - used for headings */
     --clr-grey: hsl(209, 61%, 16%);
-    --clr-grey-:light hsl(210, 31%, 80%);
+    --clr-grey-light: hsl(0, 0%, 83%);
     --clr-black: #000000;
     /* --transition: all 0.3s linear; */
     /* --spacing: 0.1rem;
     --radius: 0.25rem; */
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+    --margin-quarter:.1rem;
+    --margin-half:.25rem;
+    --margin-1:.5rem;
+    --margin-2:.75rem;
+    --margin-3:1rem;
    
   }
   /*
@@ -48,28 +54,111 @@ Variables
       background-color: var(--clr-primary) !important;
 
   }
-
+/* Buttons */
+.btn-default{
+  background: transparent !important;
+  color: black;
+  font-weight: bolder;
+  border: solid .1rem var(--clr-primary);
+}
+  /*  */
+  
    /*
   =============== 
-Component
+Components Globals
   ===============
   */
   
   /* Navbar */
+  
   nav {
       height: 10vh !important;
+      margin-bottom: var(--margin-1);
+      background-color: var(--clr-grey);
   }
   .nav-wrapper img{
       height: 100%;
       max-width: fit-content;
   }
   /* main */
+  .line-top {
+      height: 8px;
+      width: 100%;
+      background-color: var(--clr-secondary);
+      margin-bottom: var(--margin-3);
+  }
 main {
-    min-height: 80vh !important;
+    min-height: 80vh ;
+    background-color: var(--clr-grey-light);
 }
+/*  */
 /* Footer */
-  footer{
+  .page-footer{
       height: 10vh !important;
       margin-bottom: 0;
       padding-bottom: 0;
+      background-color: var(--clr-grey);
+  }
+
+    /*
+  =============== 
+Components User
+  ===============
+  */
+  .vehicles-category-section{
+ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: var(--margin-2);
+
+  }
+ 
+  .vehicles-category-section .vehicles-category-icon{
+    
+    border-radius: 50%;
+    padding: var(--margin-1);
+    background-color: #fff;
+    margin-bottom: var(--margin-half);
+
+  }
+  .category-item {
+    
+    padding: var(--margin-half);
+  }
+  .category-item label {
+   
+    font-size: 1.3rem;
+    font-weight: bolder;
+    
+  }
+
+  .filter-vehicles-section {
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: var(--margin-1);
+    padding-bottom: var(--margin-1);
+    
+  }
+
+  .filter-vehicle-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--margin-1);
+  }
+  .filter-method-row {
+    width: 100%;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  }
+  .filter-method-row button{
+    width: 45%;
+    margin: var(--margin-quarter) ;
+    
+
   }

@@ -1,11 +1,18 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config({ path: ".env" }); //load all .env vars
+}
+
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+const { json, urlencoded } = require("body-parser");
+const connect = require("./connect");
 
 var adminsRouter = require("./routes/admins");
 var usersRouter = require("./routes/users");
+var adsRouter = require("./routes/ads");
 
 var expressLayouts = require("express-ejs-layouts");
 var app = express();
@@ -26,13 +33,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", usersRouter);
-app.use("/admin-dash", adminsRouter);
+app.use("/", adsRouter);
+app.use("/admin-dashboard", adminsRouter);
+app.use("/user-dashboard", usersRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
 });
 
+// Db connectivity
+const PORT = process.env.PORT || 4000;
+connect()
+  .then(() =>
+    app.listen(PORT, () => {
+      console.log("server on http://localhost:4000");
+    })
+  )
+  .catch((e) => console.error(e));
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
